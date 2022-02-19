@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('state', StateController::class);
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,3 +25,4 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
